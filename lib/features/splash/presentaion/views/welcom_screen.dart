@@ -1,5 +1,4 @@
 import 'package:chef_app/core/utilis/app_assets.dart';
-import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
@@ -22,27 +21,33 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
           const Positioned(
-           top: 300,
-           left: 40,
-           child:
-            Column(
+            top: 300,
+            left: 60,
+            child:
+              Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-               Text("Cook Like A Chef",
-                  style: TextStyle(
-                   color: Colors.white,
-                   fontSize:30,
-                   fontFamily: "NekroFont"
+               Material(
+                 type: MaterialType.transparency,
+                 child: Text("Cook Like A Chef",
+                    style: TextStyle(
+                     color: Colors.white,
+                     fontSize:36,
+                     fontFamily: "NekroFont"
+                 ),
+                 ),
                ),
-               ),
-                SizedBox(height: 10,),
-                Text("please choose your language",style: TextStyle(color: Colors.white,
-                fontSize:18,)),
+                SizedBox(height: 8,),
+                Material(
+                  type: MaterialType.transparency,
+                  child: Text("please choose your language",style: TextStyle(color: Colors.white,
+                  fontSize:18,)),
+                ),
                 SizedBox(height: 20,),
                Row(
                  children: [
                    CustomElevatedButton.CustomElevatedButton(buttonText: 'English',),
-                   SizedBox(width: 20,),
+                   SizedBox(width: 30,),
                    CustomElevatedButton.CustomElevatedButton(buttonText: 'Arabic',)
 
                  ],

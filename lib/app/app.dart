@@ -1,5 +1,7 @@
-import 'package:chef_app/features/splash/splash_screen.dart';
-import 'package:chef_app/features/splash/welcom_screen.dart';
+import 'package:chef_app/core/routes/app_Router.dart';
+import 'package:chef_app/core/routes/app_routes.dart';
+import 'package:chef_app/features/splash/presentaion/views/splash_screen.dart';
+import 'package:chef_app/features/splash/presentaion/views/welcom_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
      debugShowCheckedModeBanner: false,
-     home:WelcomeScreen(),
+     initialRoute: Routes.splashScreen,
+     onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
