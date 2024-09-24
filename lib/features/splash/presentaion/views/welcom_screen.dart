@@ -1,6 +1,7 @@
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -20,11 +21,11 @@ class WelcomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            top: 300,
-            left: 60,
+            Positioned(
+            top: 300.h,
+            left: 60.w,
             child:
-              Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                Material(
@@ -32,23 +33,23 @@ class WelcomeScreen extends StatelessWidget {
                  child: Text("Cook Like A Chef",
                     style: TextStyle(
                      color: Colors.white,
-                     fontSize:36,
+                     fontSize:36.sp,
                      fontFamily: "NekroFont"
                  ),
                  ),
                ),
-                SizedBox(height: 8,),
+                SizedBox(height: 8.h,),
                 Material(
                   type: MaterialType.transparency,
                   child: Text("please choose your language",style: TextStyle(color: Colors.white,
-                  fontSize:18,)),
+                  fontSize:18.sp,)),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 30.h,),
                Row(
                  children: [
-                   CustomElevatedButton.CustomElevatedButton(buttonText: 'English',),
-                   SizedBox(width: 30,),
-                   CustomElevatedButton.CustomElevatedButton(buttonText: 'Arabic',)
+                   const CustomElevatedButton.CustomElevatedButton(buttonText: 'English',),
+                   SizedBox(width: 30.w,),
+                   const CustomElevatedButton.CustomElevatedButton(buttonText: 'Arabic',)
 
                  ],
                )

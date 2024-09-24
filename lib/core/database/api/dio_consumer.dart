@@ -18,7 +18,7 @@ class DioConsumer extends ApiConsumer {
       responseHeader: true,
     ));
   }
-
+ 
   @override
   Future delete(
       String path,
