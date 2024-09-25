@@ -1,6 +1,9 @@
+import 'package:chef_app/core/bloc/cubit/global_cubit.dart';
+import 'package:chef_app/core/locolization/app_localization.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -22,7 +25,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
             Positioned(
-            top: 300.h,
+            top: 320.h,
             left: 60.w,
             child:
             Column(
@@ -30,7 +33,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                Material(
                  type: MaterialType.transparency,
-                 child: Text("Cook Like A Chef",
+                 child: Text("CookLikeAChef".tr(context),
                     style: TextStyle(
                      color: Colors.white,
                      fontSize:36.sp,
@@ -41,18 +44,36 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(height: 8.h,),
                 Material(
                   type: MaterialType.transparency,
-                  child: Text("please choose your language",style: TextStyle(color: Colors.white,
-                  fontSize:18.sp,)),
+                  child: Text("pleaseChooseYourLanguage".tr(context),
+                      style: TextStyle(color: Colors.white,
+                      fontSize:20.sp,).copyWith(fontWeight: FontWeight.bold)
+                  ),
                 ),
-                SizedBox(height: 30.h,),
-               Row(
-                 children: [
-                   const CustomElevatedButton.CustomElevatedButton(buttonText: 'English',),
-                   SizedBox(width: 30.w,),
-                   const CustomElevatedButton.CustomElevatedButton(buttonText: 'Arabic',)
+                SizedBox(height: 50.h,),
+               BlocBuilder<GlobalCubit,GlobalState>(
+                builder: (context, state) {
+                  return Row(
+                               children: [
+                                 SizedBox(
+                                     height: 40.h,width: 120.w,
+                                     child: CustomElevatedButton(buttonText:"English".tr(context) ,
+                                       onPressed:(){
+                                         BlocProvider.of<GlobalCubit>(context).changeLang();
+                                       }),
+                                 ),
+                                 SizedBox(width: 30.w,),
+                                 SizedBox(
+                                     height: 40.h,width: 120.w,
+                                     child: CustomElevatedButton(buttonText:"Arabic".tr(context),
+                                      onPressed:(){
+                                      BlocProvider.of<GlobalCubit>(context).changeLang();
+                                      }),
+                                     ),
 
-                 ],
-               )
+                               ],
+                             );
+                },
+              )
              ],
            )
           )

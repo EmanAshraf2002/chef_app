@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToWelcomePage() async{
-   await Future.delayed(const Duration(seconds: 7)).then((value) {
+   await Future.delayed(const Duration(seconds:4)).then((value) {
      navigate(context: context, route: Routes.welcomeScreen);
    });
   }
