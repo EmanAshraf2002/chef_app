@@ -27,13 +27,14 @@ class WelcomeScreen extends StatelessWidget {
             Positioned(
             top: 320.h,
             left: 60.w,
+            right: 40.w,
             child:
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                Material(
                  type: MaterialType.transparency,
-                 child: Text("CookLikeAChef".tr(context),
+                 child: Text("WelcomeToChefApp".tr(context),
                     style: TextStyle(
                      color: Colors.white,
                      fontSize:36.sp,
@@ -53,20 +54,21 @@ class WelcomeScreen extends StatelessWidget {
                BlocBuilder<GlobalCubit,GlobalState>(
                 builder: (context, state) {
                   return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                children: [
                                  SizedBox(
-                                     height: 40.h,width: 120.w,
+                                     height: 50.h,width: 120.w,
                                      child: CustomElevatedButton(buttonText:"English".tr(context) ,
                                        onPressed:(){
-                                         BlocProvider.of<GlobalCubit>(context).changeLang();
+                                         BlocProvider.of<GlobalCubit>(context).changeLang('en');
                                        }),
                                  ),
                                  SizedBox(width: 30.w,),
                                  SizedBox(
-                                     height: 40.h,width: 120.w,
+                                     height: 50.h,width: 120.w,
                                      child: CustomElevatedButton(buttonText:"Arabic".tr(context),
                                       onPressed:(){
-                                      BlocProvider.of<GlobalCubit>(context).changeLang();
+                                      BlocProvider.of<GlobalCubit>(context).changeLang('ar');
                                       }),
                                      ),
 

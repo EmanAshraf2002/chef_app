@@ -1,6 +1,6 @@
 final Map<String, String> arEg =
 {
- "CookLikeAChef":"اطبخ كالشيف ",
+ "WelcomeToChefApp":"مرحبا بك في تطبيق الشيف ",
  "pleaseChooseYourLanguage":"من فضلك اختر لغتك المفضلة",
  "Arabic":"العربية",
  "English":"الانجليزية",
