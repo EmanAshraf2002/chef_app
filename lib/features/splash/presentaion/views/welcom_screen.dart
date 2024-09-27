@@ -1,6 +1,7 @@
 import 'package:chef_app/core/bloc/cubit/global_cubit.dart';
 import 'package:chef_app/core/locolization/app_localization.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
+import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,7 +60,8 @@ class WelcomeScreen extends StatelessWidget {
                                  SizedBox(
                                      height: 50.h,width: 120.w,
                                      child: CustomElevatedButton(buttonText:"English".tr(context) ,
-                                       onPressed:(){
+                                         bgColor: AppColors.white,textColor: AppColors.black,
+                                         onPressed:(){
                                          BlocProvider.of<GlobalCubit>(context).changeLang('en');
                                        }),
                                  ),
@@ -67,9 +69,10 @@ class WelcomeScreen extends StatelessWidget {
                                  SizedBox(
                                      height: 50.h,width: 120.w,
                                      child: CustomElevatedButton(buttonText:"Arabic".tr(context),
-                                      onPressed:(){
+                                       bgColor: AppColors.white,textColor: AppColors.black,
+                                       onPressed:(){
                                       BlocProvider.of<GlobalCubit>(context).changeLang('ar');
-                                      }),
+                                      },),
                                      ),
 
                                ],

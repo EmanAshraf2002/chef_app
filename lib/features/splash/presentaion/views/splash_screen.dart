@@ -39,9 +39,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
             ),
-           SizedBox(height: 12.h,),
-            const Text("Chef App",style: TextStyle(color: Colors.white,
-                fontSize:28,
+            SizedBox(height: 12.h,),
+            Text("Chef App",style: TextStyle(color: Colors.white,
+                fontSize:28.sp,
                 fontFamily: "NekroFont"
             ),
               ),

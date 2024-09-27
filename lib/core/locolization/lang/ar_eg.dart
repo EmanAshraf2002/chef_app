@@ -4,5 +4,12 @@ final Map<String, String> arEg =
  "pleaseChooseYourLanguage":"من فضلك اختر لغتك المفضلة",
  "Arabic":"العربية",
  "English":"الانجليزية",
+ "WelcomeBack":"مرحبا بعودتك",
+ "E-mail": "البريد الإلكتروني",
+ "password": "كلمة المرور",
+ "EnterYourEmail":"ادخل بريدك الالكتروني",
+ "EnterYourPassword":"ادخل كلمة المرور الخاصه بك",
+ "ForgetPassword": "نسيت كلمة المرور",
+ "login": "تسجيل الدخول",
 
 };

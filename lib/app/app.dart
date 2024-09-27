@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 ],
                 locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
                 debugShowCheckedModeBanner: false,
-                initialRoute: Routes.splashScreen,
+                initialRoute: Routes.loginScreen,
                 onGenerateRoute: AppRouter.onGenerateRoute,
               );
             },

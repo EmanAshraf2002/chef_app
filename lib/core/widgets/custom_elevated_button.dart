@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
    CustomElevatedButton({
-    super.key, required this.buttonText,this.onPressed
+    super.key, required this.buttonText,this.onPressed, required this.bgColor, required this.textColor
   });
-
+  final Color bgColor;
+  final Color textColor;
   final String buttonText;
   VoidCallback? onPressed;
 
@@ -14,13 +15,13 @@ class CustomElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed:onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor:AppColors.white,
+        backgroundColor:bgColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
         )
       ),
       child: Text(buttonText,
-        style:const TextStyle(color:AppColors.black, fontSize:18,),
+        style:TextStyle(color:textColor, fontSize:18,),
       ),
     );
   }
