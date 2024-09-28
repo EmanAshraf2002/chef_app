@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:chef_app/core/database/cache/cache_helper.dart';
 import 'package:chef_app/core/services/service_locator.dart';
-import 'package:meta/meta.dart';
+import 'global_state.dart';
 
-part 'global_state.dart';
 
 class GlobalCubit extends Cubit<GlobalState> {
   GlobalCubit() : super(GlobalInitial());

@@ -1,4 +1,5 @@
 import 'package:chef_app/core/bloc/cubit/global_cubit.dart';
+import 'package:chef_app/core/bloc/cubit/global_state.dart';
 import 'package:chef_app/core/routes/app_Router.dart';
 import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:flutter/material.dart';

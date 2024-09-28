@@ -2,6 +2,7 @@ import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/utilis/commons.dart';
+import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,15 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
-                height: 140.h,
-                width:140.w,
-                decoration: const BoxDecoration(
-                 image: DecorationImage(
-                   image:AssetImage(AppAssets.logo)
-
-                 ),
-                ),
+              child:CustomContainerImage(
+                h:140.h ,w:140.w, imagePathString:AppAssets.logo ,
               ),
             ),
             SizedBox(height: 12.h,),

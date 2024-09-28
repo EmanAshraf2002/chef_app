@@ -11,5 +11,7 @@ final Map<String, String> enUs =
   "password":"Password",
   "ForgetPassword":"Forget Password",
   "login":"Login",
+  "PleaseEnterValidEmail":"Please Enter valid Email",
+  "PleaseEnterValidPassword":"Please Enter valid Password"
 
 };

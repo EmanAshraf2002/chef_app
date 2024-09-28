@@ -11,5 +11,7 @@ final Map<String, String> arEg =
  "EnterYourPassword":"ادخل كلمة المرور الخاصه بك",
  "ForgetPassword": "نسيت كلمة المرور",
  "login": "تسجيل الدخول",
+ "PleaseEnterValidEmail":"من فضلك ادخل بريد صحيح",
+ "PleaseEnterValidPassword":"من فضلك ادخل كلمة مرور صحيحة",
 
 };

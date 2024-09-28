@@ -1,4 +1,5 @@
 import 'package:chef_app/core/bloc/cubit/global_cubit.dart';
+import 'package:chef_app/core/bloc/cubit/global_state.dart';
 import 'package:chef_app/core/locolization/app_localization.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
@@ -27,8 +28,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
             Positioned(
             top: 320.h,
-            left: 60.w,
-            right: 40.w,
+            left: 50.w,
             child:
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                  child: Text("WelcomeToChefApp".tr(context),
                     style: TextStyle(
                      color: Colors.white,
-                     fontSize:36.sp,
+                     fontSize:30.sp,
                      fontFamily: "NekroFont"
                  ),
                  ),
@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                       fontSize:20.sp,).copyWith(fontWeight: FontWeight.bold)
                   ),
                 ),
-                SizedBox(height: 50.h,),
+                SizedBox(height:64.h,),
                BlocBuilder<GlobalCubit,GlobalState>(
                 builder: (context, state) {
                   return Row(
@@ -59,21 +59,22 @@ class WelcomeScreen extends StatelessWidget {
                                children: [
                                  SizedBox(
                                      height: 50.h,width: 120.w,
-                                     child: CustomElevatedButton(buttonText:"English".tr(context) ,
+                                     child: CustomElevatedButton(
+                                         buttonText:"English".tr(context) ,
+                                         height: 50.h,width: 120.w,
                                          bgColor: AppColors.white,textColor: AppColors.black,
                                          onPressed:(){
                                          BlocProvider.of<GlobalCubit>(context).changeLang('en');
                                        }),
                                  ),
                                  SizedBox(width: 30.w,),
-                                 SizedBox(
-                                     height: 50.h,width: 120.w,
-                                     child: CustomElevatedButton(buttonText:"Arabic".tr(context),
-                                       bgColor: AppColors.white,textColor: AppColors.black,
-                                       onPressed:(){
-                                      BlocProvider.of<GlobalCubit>(context).changeLang('ar');
-                                      },),
-                                     ),
+                                 CustomElevatedButton(
+                                   buttonText:"Arabic".tr(context),
+                                   height: 50.h,width: 120.w,
+                                   bgColor: AppColors.white,textColor: AppColors.black,
+                                   onPressed:(){
+                                  BlocProvider.of<GlobalCubit>(context).changeLang('ar');
+                                  },),
 
                                ],
                              );
