@@ -4,10 +4,12 @@ class LoginModel{
   final String message;
   final String token;
 
-  LoginModel({required this.message, required this.token});
+  LoginModel({required this.message,required this.token,});
 
   factory LoginModel.fromJson(Map<String , dynamic> jsonData){
-    return LoginModel(message: jsonData[ApiKeys.message],
-        token: jsonData[ApiKeys.token],);
+    return LoginModel(
+       message: jsonData[ApiKeys.message]??'Unknown email',
+       token: jsonData[ApiKeys.token]??'Unknown email',
+    );
   }
 }

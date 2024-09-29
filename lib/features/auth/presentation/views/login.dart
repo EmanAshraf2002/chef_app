@@ -1,14 +1,17 @@
 import 'package:chef_app/core/locolization/app_localization.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
+import 'package:chef_app/core/utilis/commons.dart';
 import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
+import 'package:chef_app/core/widgets/custom_loading_indicator.dart';
 import 'package:chef_app/core/widgets/custom_text_form_field.dart';
 import 'package:chef_app/features/auth/presentation/auth_cubits/login_cubit/login_cubit.dart';
 import 'package:chef_app/features/auth/presentation/auth_cubits/login_cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -43,6 +46,12 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(24),
                 child: BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
+                    if(state is LoginSuccessState){
+                      showToast(msg:"LoginSuccessfully".tr(context), toastStates: ToastStates.success);
+                    }
+                    if(state is LoginFailureState){
+                      showToast(msg:state.errorMessage, toastStates: ToastStates.error);
+                    }
                   },
                   builder: (context, state) {
                     return Form(
@@ -95,6 +104,7 @@ class LoginScreen extends StatelessWidget {
                           SizedBox(
                             height: 64.h,
                           ),
+                          state is LoginLoadingState?const CustomLoadingIndicator() :
                           CustomElevatedButton(
                             buttonText: "login".tr(context),
                             bgColor: AppColors.primary,
@@ -103,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                             width: 235.w,
                             onPressed: (){
                              if(BlocProvider.of<LoginCubit>(context).loginKey.currentState!.validate()){
-                                print("login");
+                               BlocProvider.of<LoginCubit>(context).login();
                               }
 
                             },
