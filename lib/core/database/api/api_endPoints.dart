@@ -43,4 +43,6 @@ class ApiKeys{
   static const String minCharge='minCharge';
   static const String disc='disc';
   static const String profilePic='profilePic';
+  static const String message='message';
+  static const String token='token';
 }
