@@ -1,5 +1,5 @@
 class ApiEndPoints{
-  static String baseUrl='https://food-api-omega.vercel.app/api/v1';
+  static String baseUrl='https://food-api-omega.vercel.app/api/v1/';
   static String chefSignIn='chef/signin';
   static String chefChangePassword='chef/change-password';
   static String changeForgottenPassword='chef/change-forgotten-password';
