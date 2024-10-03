@@ -1,4 +1,5 @@
 import 'package:chef_app/core/locolization/app_localization.dart';
+import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/utilis/commons.dart';
@@ -89,16 +90,34 @@ class LoginScreen extends StatelessWidget {
                           }
                             ),
                           SizedBox(
-                            height: 18.h,
+                            height: 12.h,
                           ),
                           Row(
                             children: [
-                              Text(
-                                "ForgetPassword?".tr(context),
-                                style: const TextStyle(
-                                  decoration: TextDecoration.underline,
+                              TextButton(
+                                onPressed: () {
+                                  navigate(context: context, route: Routes.sendCodeScreen);
+                                },
+                                style: TextButton.styleFrom(
+                                  foregroundColor: AppColors.gray, // Default color
+                                  textStyle: const TextStyle(
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ).copyWith(
+                                  foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+                                        (Set<MaterialState> states) {
+                                      if (states.contains(MaterialState.pressed)) {
+                                        return AppColors.primary; // Color when pressed
+                                      }
+                                      return AppColors.gray; // Default color
+                                    },
+                                  ),
+                                ),
+                                child: Text(
+                                  "ForgetPassword?".tr(context),
                                 ),
                               ),
+
                             ],
                           ),
                           SizedBox(

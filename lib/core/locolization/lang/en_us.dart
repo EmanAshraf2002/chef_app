@@ -15,5 +15,7 @@ final Map<String, String> enUs =
   "PleaseEnterValidPassword":"Please Enter valid Password",
   "LoginSuccessfully":"Login Successfully",
   "LoginFailed":"Login Failed",
+  "EnterYourMailAndWeWillSendYouCodeToResetYourPassword":"Enter your mail and we will send you code to reset your Password",
+  "SendCode":"Send Code"
 
 };

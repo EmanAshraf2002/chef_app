@@ -28,7 +28,7 @@ class AppTextStyles
       fontWeight: FontWeight.bold,
       color: AppColors.black
   );
-  static  TextStyle font17 = TextStyle(
+  static  TextStyle font18 = TextStyle(
       fontSize: 18.sp,
       fontWeight: FontWeight.w600,
       color: AppColors.black
