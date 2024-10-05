@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration:InputDecoration(
         hintText: hintText,
         labelText: labelText,
-        labelStyle:TextStyle(color: AppColors.primary,fontSize: 22.sp),
+        labelStyle:TextStyle(color: AppColors.primary,fontSize:20.sp),
         suffixIcon: IconButton(onPressed:suffixOnPressed ,icon: Icon(icon,color: AppColors.primary,),),
         contentPadding: EdgeInsetsDirectional.symmetric(vertical: 14.h, horizontal: 22.w),
         enabledBorder: OutlineInputBorder(

@@ -17,5 +17,14 @@ final Map<String, String> arEg =
  "LoginFailed":"فشل تسجيل الدخول",
  "EnterYourMailAndWeWillSendYouCodeToResetYourPassword":"ادخل بريدك الالكتروني وسوف نرسل لك كود لإعادة تعيين الرقم السري الخاص بك",
  "SendCode":"ارسل الكود",
+ "CreateNewPassword": "إنشاء كلمة مرور جديدة",
+ "NewPassword": "كلمة مرور جديدة",
+ "EnterNewPassword":"ادخل كلمة مرور جديدة ",
+ "ConfirmPassword": "تأكيد كلمة المرور",
+ "ResetPassword": "إعادة تعيين كلمة المرور",
+ "Code": "الرمز",
+ "EnterCode":"ادخل الرمز",
+ "PleaseEnterValidCode":"من فضلك ادخل كود صحيح",
+ "PasswordsMustMatch":"يجب تطابق كلمة المرور وتأكيد كلمة المرور ",
 
 };

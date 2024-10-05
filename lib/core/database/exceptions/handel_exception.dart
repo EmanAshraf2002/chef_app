@@ -71,6 +71,9 @@ handleDioException(e) {
         case 404: //notFound
           throw NotFoundException(ErrorModel.fromJson(e.response!.data));
 
+        case 504: //bad request
+          throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+
         case 409: //conflict
           throw ConflictException(ErrorModel.fromJson(e.response!.data));
 

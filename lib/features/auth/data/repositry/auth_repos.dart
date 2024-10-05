@@ -27,4 +27,45 @@ class AuthRepository{
 
   }
 
+  Future<Either<String,String>> sendCode({required String email}) async{
+    try {
+      final response= await sl<ApiConsumer>().post(
+        ApiEndPoints.sendCode,
+        data: {
+          ApiKeys.email:email
+           }
+      );
+      return(Right(response[ApiKeys.message]));
+    }
+    on ServerException catch (e) {
+       return(Left(e.errorModel.errorMessage));
+    }
+
+  }
+
+  Future<Either<String,String>> resetPassword({required String email,
+    required String pass,required String confirmPass, required String code}) async{
+    try {
+      final response= await sl<ApiConsumer>().patch(
+          ApiEndPoints.changeForgottenPassword,
+          data: {
+            ApiKeys.email:email,
+            ApiKeys.password:pass,
+            ApiKeys.confirmPassword:confirmPass,
+            ApiKeys.code:code,
+          }
+      );
+      if (response != null && response.containsKey(ApiKeys.message)) {
+        return Right(response[ApiKeys.message]);
+      } else {
+        return const Left("An unexpected error occurred. Please try again.");
+      }
+    }
+    on ServerException catch (e) {
+      return(Left(e.errorModel.errorMessage));
+    }
+
+  }
+
+
 }
