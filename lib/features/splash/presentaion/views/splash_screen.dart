@@ -1,4 +1,7 @@
+import 'package:chef_app/core/database/api/api_endPoints.dart';
+import 'package:chef_app/core/database/cache/cache_helper.dart';
 import 'package:chef_app/core/routes/app_routes.dart';
+import 'package:chef_app/core/services/service_locator.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/utilis/commons.dart';
@@ -46,8 +49,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToWelcomePage() async{
-   await Future.delayed(const Duration(seconds:4)).then((value) {
-     navigate(context: context, route: Routes.welcomeScreen);
+   await Future.delayed(const Duration(seconds:4)).then((value) async{
+     await sl<CacheHelper>().getData(key: ApiKeys.token)==null?
+     navigate(context: context, route: Routes.welcomeScreen):
+     navigate(context: context, route: Routes.homeScreen) ;
+
    });
   }
 }

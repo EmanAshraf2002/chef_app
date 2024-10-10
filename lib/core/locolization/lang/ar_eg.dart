@@ -9,7 +9,7 @@ final Map<String, String> arEg =
  "password": "كلمة المرور",
  "EnterYourEmail":"ادخل بريدك الالكتروني",
  "EnterYourPassword":"ادخل كلمة المرور الخاصه بك",
- "ForgetPassword": "نسيت كلمة المرور",
+ "ForgetPassword?": "نسيت كلمة المرور؟",
  "login": "تسجيل الدخول",
  "PleaseEnterValidEmail":"من فضلك ادخل بريد صحيح",
  "PleaseEnterValidPassword":"من فضلك ادخل كلمة مرور صحيحة",
@@ -26,5 +26,7 @@ final Map<String, String> arEg =
  "EnterCode":"ادخل الرمز",
  "PleaseEnterValidCode":"من فضلك ادخل كود صحيح",
  "PasswordsMustMatch":"يجب تطابق كلمة المرور وتأكيد كلمة المرور ",
+ "Menu":"القائمة",
+ "Profile":"الملف الشخصي",
 
 };

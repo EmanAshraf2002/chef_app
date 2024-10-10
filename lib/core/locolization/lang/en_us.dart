@@ -9,7 +9,7 @@ final Map<String, String> enUs =
   "EnterYourEmail":"Enter Your Email",
   "EnterYourPassword":"Enter Your Password",
   "password":"Password",
-  "ForgetPassword":"Forget Password",
+  "ForgetPassword?":"Forget Password?",
   "login":"Login",
   "PleaseEnterValidEmail":"Please Enter valid Email",
   "PleaseEnterValidPassword":"Please Enter valid Password",
@@ -26,5 +26,7 @@ final Map<String, String> enUs =
   "EnterCode":"Enter Code",
   "PleaseEnterValidCode":"Please Enter Valid Code",
   "PasswordsMustMatch":"passwords must match",
+  "Menu":"Menu",
+  "Profile":"Profile",
 
 };
