@@ -28,5 +28,9 @@ final Map<String, String> arEg =
  "PasswordsMustMatch":"يجب تطابق كلمة المرور وتأكيد كلمة المرور ",
  "Menu":"القائمة",
  "Profile":"الملف الشخصي",
+ "AddMeal":"إضافة طبق للمنيو",
+ "DeleteMeal?": "حذف الوجبة؟",
+ "confirm": "تأكيد",
+ "cancel": "إلغاء"
 
 };

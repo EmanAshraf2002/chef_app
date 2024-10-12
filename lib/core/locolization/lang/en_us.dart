@@ -28,5 +28,9 @@ final Map<String, String> enUs =
   "PasswordsMustMatch":"passwords must match",
   "Menu":"Menu",
   "Profile":"Profile",
+  "AddMeal":"Add Meal",
+  "DeleteMeal?":"Delete Meal?",
+  "confirm":"confirm",
+  "cancel":"cancel",
 
 };
