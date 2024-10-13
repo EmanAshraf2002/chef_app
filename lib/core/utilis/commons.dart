@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'app_colors.dart';
 
@@ -34,4 +35,13 @@ Color getColor(ToastStates toastStates)
     case ToastStates.warning:
       return AppColors.primary;
   }
+}
+
+Future<XFile?> pickImage(ImageSource source) async{
+  XFile? image= await ImagePicker().pickImage(source: source);
+  if(image!=null){
+    return image;
+  }
+  return null;
+
 }

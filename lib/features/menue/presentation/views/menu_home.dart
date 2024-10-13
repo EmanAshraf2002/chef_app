@@ -1,5 +1,7 @@
 import 'package:chef_app/core/locolization/app_localization.dart';
+import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
+import 'package:chef_app/core/utilis/commons.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:chef_app/features/menue/presentation/componants/menue_item.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +25,9 @@ class MenuHomeScreen  extends StatelessWidget {
                 textColor: AppColors.white,
                 height: 55.h,
                 width: 250.w,
-                onPressed: (){}
+                onPressed: (){
+                  navigate(context: context, route:Routes.addMealScreen);
+                }
               ),
               SizedBox(height: 32.h,),
               Expanded(

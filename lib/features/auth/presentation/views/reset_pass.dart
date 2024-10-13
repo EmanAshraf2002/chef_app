@@ -3,6 +3,7 @@ import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/utilis/app_textStyles.dart';
 import 'package:chef_app/core/utilis/commons.dart';
+import 'package:chef_app/core/widgets/back_leading_widget.dart';
 import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
 import 'package:chef_app/core/widgets/custom_text_form_field.dart';
@@ -22,10 +23,7 @@ class ResetPasswordScreen extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        leading: IconButton(onPressed: () {
-          navigate(context: context, route: Routes.sendCodeScreen);
-        }, icon: const Icon(Icons.arrow_back)
-        ),
+        leading:const BackLeadingWidget(routeName: Routes.sendCodeScreen,),
         backgroundColor: AppColors.primary,
       ),
       body: SingleChildScrollView(

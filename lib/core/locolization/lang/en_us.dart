@@ -32,5 +32,8 @@ final Map<String, String> enUs =
   "DeleteMeal?":"Delete Meal?",
   "confirm":"confirm",
   "cancel":"cancel",
+  "AddDishToMenu":"Add Dish To Menu",
+  "camera":"camera",
+  "gallery":"gallery",
 
 };

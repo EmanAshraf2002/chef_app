@@ -31,6 +31,9 @@ final Map<String, String> arEg =
  "AddMeal":"إضافة طبق للمنيو",
  "DeleteMeal?": "حذف الوجبة؟",
  "confirm": "تأكيد",
- "cancel": "إلغاء"
+ "cancel": "إلغاء",
+ "AddDishToMenu":"إضافة طبق للمنيو",
+ "camera":"كاميرا",
+ "gallery":"المعرض",
 
 };
