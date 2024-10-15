@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField ({super.key,required this.hintText,
-    required this.labelText, required this.controller,this.isPassword=false,
+    this.labelText, required this.controller,this.isPassword=false,
     this.icon, this.suffixOnPressed,this.validator});
 
   final String? hintText;
@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration:InputDecoration(
         hintText: hintText,
         labelText: labelText,
-        labelStyle:TextStyle(color: AppColors.primary,fontSize:20.sp),
+        labelStyle:TextStyle(color: AppColors.primary,fontSize:18.sp),
         suffixIcon: IconButton(onPressed:suffixOnPressed ,icon: Icon(icon,color: AppColors.primary,),),
         contentPadding: EdgeInsetsDirectional.symmetric(vertical: 14.h, horizontal: 22.w),
         enabledBorder: OutlineInputBorder(
