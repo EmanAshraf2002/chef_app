@@ -40,7 +40,7 @@ class AppRouter{
        return MaterialPageRoute(builder: (context )=>const HomeScreen());
 
      case Routes.menuHomeScreen :
-       return MaterialPageRoute(builder: (context )=>const MenuHomeScreen());
+       return MaterialPageRoute(builder: (context )=> const MenuHomeScreen());
 
      case Routes.profileHomeScreen :
        return MaterialPageRoute(builder: (context )=>const ProfileHomeScreen());

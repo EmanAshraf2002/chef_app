@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -44,4 +45,9 @@ Future<XFile?> pickImage(ImageSource source) async{
   }
   return null;
 
+}
+
+Future uploadImageToApi(XFile image) async{
+  return MultipartFile.fromFileSync(image.path,
+      filename:image.path.split('/').last );
 }

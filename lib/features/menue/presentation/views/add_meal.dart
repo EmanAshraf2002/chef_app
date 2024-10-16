@@ -7,6 +7,7 @@ import 'package:chef_app/core/utilis/commons.dart';
 import 'package:chef_app/core/widgets/back_leading_widget.dart';
 import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
+import 'package:chef_app/core/widgets/custom_loading_indicator.dart';
 import 'package:chef_app/core/widgets/custom_text_form_field.dart';
 import 'package:chef_app/features/menue/presentation/componants/cam_gallery_dialog.dart';
 import 'package:chef_app/features/menue/presentation/cubits/menu_cubit.dart';
@@ -38,7 +39,12 @@ class AddMealScreen extends StatelessWidget {
           child: Center(
             child: BlocConsumer<MenuCubit, MenuState>(
               listener: (context, state) {
-
+               if(state is AddDishSuccessState){
+                 showToast(msg:"MealAddedSuccessfully".tr(context),
+                     toastStates: ToastStates.success);
+                 navigate(context: context, route:Routes.homeScreen);
+                 BlocProvider.of<MenuCubit>(context).getChefMeals();
+               }
               },
               builder: (context, state) {
                 final menuCubit=BlocProvider.of<MenuCubit>(context);
@@ -67,12 +73,12 @@ class AddMealScreen extends StatelessWidget {
                                           cameraOnTap: () {
                                             Navigator.pop(context);
                                             pickImage(ImageSource.camera)
-                                                .then((value) => null);
+                                                .then((value) =>menuCubit.image=value);
                                           },
                                           galleryOnTap: () {
                                             Navigator.pop(context);
                                             pickImage(ImageSource.gallery)
-                                                .then((value) => null);
+                                                .then((value) =>menuCubit.image=value);
                                           },
                                         );
                                       });
@@ -194,13 +200,18 @@ class AddMealScreen extends StatelessWidget {
                         height:50.h,
                       ),
                       //add to menu button
-                      CustomElevatedButton(
+                      state is AddDishLoadingState?const CustomLoadingIndicator():
+                       CustomElevatedButton(
                         buttonText: "AddToMenu".tr(context),
                         bgColor: AppColors.primary,
                         textColor: AppColors.white,
                         height: 55.h,
                         width: 235.w,
-                        onPressed: () {},
+                        onPressed: () {
+                          if(menuCubit.addToMenuKey.currentState!.validate()){
+                            menuCubit.addDish();
+                          }
+                        },
                       ),
                     ],
                   ),

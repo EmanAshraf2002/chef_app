@@ -21,7 +21,7 @@ void main() async{
          BlocProvider( create: (context) => sl<LoginCubit>(),),
          BlocProvider( create: (context) => sl<ForgetPasswordCubit>(),),
          BlocProvider( create: (context) => sl<HomeCubit>(),),
-         BlocProvider( create: (context) => sl<MenuCubit>(),),
+         BlocProvider( create: (context) => sl<MenuCubit>()..getChefMeals(),),
 
         ],
         child:const MyApp(),

@@ -49,5 +49,7 @@ final Map<String, String> arEg =
  "number":"العدد",
  "AddToMenu": "أضف إلى القائمة",
  "category":"الصنف",
+ "MealAddedSuccessfully":"تم إضافة الوجبة بنجاح",
+ "NoMealsYet":"لا يوجد وجبات",
 
 };

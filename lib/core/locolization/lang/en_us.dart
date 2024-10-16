@@ -49,5 +49,7 @@ final Map<String, String> enUs =
   "number":"number",
   "AddToMenu":"Add To Menu",
   "category":"Category",
+  "MealAddedSuccessfully":"Meal added Successfully",
+  "NoMealsYet":"No Meals Yet",
 
 };
