@@ -46,45 +46,64 @@ class CancleExeption extends ServerException {
 }
 
 
-handleDioException(e) {
+handleDioException(DioException e) {
   switch (e.type) {
     case DioExceptionType.badCertificate:
-      throw BadCertificateException(ErrorModel.fromJson(e.response!.data));
+      throw BadCertificateException(_handleErrorModel(e));
+
     case DioExceptionType.connectionTimeout:
-      throw ConnectionTimeoutException(ErrorModel.fromJson(e.response!.data));
+      throw ConnectionTimeoutException(_handleErrorModel(e));
+
     case DioExceptionType.receiveTimeout:
     case DioExceptionType.connectionError:
     case DioExceptionType.sendTimeout:
-      throw ServerException(ErrorModel.fromJson(e.response!.data));
+      throw ServerException(_handleErrorModel(e));
 
     case DioExceptionType.badResponse:
       switch (e.response?.statusCode) {
-        case 400: //bad request
-          throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+        case 400: // Bad request
+          throw BadRequestException(_handleErrorModel(e));
 
-        case 401: //unauthorized
-          throw UnauthorizedException(ErrorModel.fromJson(e.response!.data));
+        case 401: // Unauthorized
+          throw UnauthorizedException(_handleErrorModel(e));
 
-        case 403: //forbidden
-          throw ForbiddenException(ErrorModel.fromJson(e.response!.data));
+        case 403: // Forbidden
+          throw ForbiddenException(_handleErrorModel(e));
 
-        case 404: //notFound
-          throw NotFoundException(ErrorModel.fromJson(e.response!.data));
+        case 404: // Not Found
+          throw NotFoundException(_handleErrorModel(e));
 
-        case 504: //bad request
-          throw BadRequestException(ErrorModel.fromJson(e.response!.data));
+        case 504: // Gateway Timeout
+          throw ServerException(ErrorModel(
+            status: 504,
+            errorMessage: "Server timeout. Please try again later.",
+          ));
 
-        case 409: //conflict
-          throw ConflictException(ErrorModel.fromJson(e.response!.data));
+        case 409: // Conflict
+          throw ConflictException(_handleErrorModel(e));
 
-      // print(e.response);
+        default:
+          throw ServerException(ErrorModel(
+            status: e.response?.statusCode ?? 500,
+            errorMessage: "Unknown error occurred",
+          ));
       }
+
     case DioExceptionType.cancel:
-      throw ServerException(ErrorModel(status: 500,errorMessage: e.toString()));
+      throw ServerException(ErrorModel(status: 500, errorMessage: e.toString()));
 
     case DioExceptionType.unknown:
-      throw ServerException(ErrorModel(status: 500,errorMessage: e.toString()));
-  // throw ServerException('badResponse');
+      throw ServerException(ErrorModel(status: 500, errorMessage: e.toString()));
   }
 }
 
+// Helper function to handle the ErrorModel creation
+ErrorModel _handleErrorModel(DioException e) {
+  if (e.response?.data is String) {
+    return ErrorModel(status: e.response?.statusCode ?? 500, errorMessage: e.response!.data);
+  } else if (e.response?.data is Map<String, dynamic>) {
+    return ErrorModel.fromJson(e.response!.data);
+  } else {
+    return ErrorModel(status: e.response?.statusCode ?? 500, errorMessage: "Unexpected error");
+  }
+}

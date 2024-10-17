@@ -41,14 +41,16 @@ class MenuHomeScreen extends StatelessWidget {
                  builder: (context, state) {
                   final menuCubit=BlocProvider.of<MenuCubit>(context);
                   return Expanded(
-                    child:state is GetAllChefMealsLoadingState?const Center(child: CustomLoadingIndicator()):
-                    menuCubit.meals.isEmpty?Center(child: Text("NoMealsYet".tr(context))):
-                    ListView.builder(
-                        itemCount: menuCubit.meals.length,
-                        itemBuilder: (context, index) => Padding(
-                          padding:const EdgeInsets.all(8.0),
-                          child: MenuItem(mealModel: menuCubit.meals[index],),
-                        )
+                    child:menuCubit.meals.isEmpty?Center(child: Text("NoMealsYet".tr(context))):
+                    Skeletonizer(
+                      enabled:state is GetAllChefMealsLoadingState?true:false,
+                      child: ListView.builder(
+                          itemCount: menuCubit.meals.length,
+                          itemBuilder: (context, index) => Padding(
+                            padding:const EdgeInsets.all(8.0),
+                            child: MenuItem(mealModel: menuCubit.meals[index],),
+                          )
+                      ),
                     ),
                   );
                 },

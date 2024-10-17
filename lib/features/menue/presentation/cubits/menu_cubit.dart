@@ -19,7 +19,6 @@ List categoryList=[
   'Chicken',
   'Fish',
   'Seafood',
-  'Pork',
   'Lamb',
   'Vegetarian',
   'Vegan',
@@ -75,7 +74,11 @@ void getChefMeals() async{
           );
 
   }
-
+  //take image from user
+  void takeImage(value){
+    image=value;
+    emit(TakeImageFromUser());
+  }
 
 
 }

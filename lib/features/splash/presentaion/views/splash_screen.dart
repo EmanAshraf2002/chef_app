@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateToWelcomePage() async{
    await Future.delayed(const Duration(seconds:4)).then((value) async{
-     await sl<CacheHelper>().getData(key: ApiKeys.token)==null?
+     await sl<CacheHelper>().getData(key: ApiKeys.token)!=null?
      navigate(context: context, route: Routes.welcomeScreen):
      navigate(context: context, route: Routes.homeScreen) ;
 

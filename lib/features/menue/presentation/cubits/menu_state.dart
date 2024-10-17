@@ -13,3 +13,4 @@ class DeleteMealFailureState extends MenuState {}
 class GetAllChefMealsLoadingState extends MenuState {}
 class GetAllChefMealsSuccessState extends MenuState {}
 class GetAllChefMealsFailureState extends MenuState {}
+class TakeImageFromUser extends MenuState {}

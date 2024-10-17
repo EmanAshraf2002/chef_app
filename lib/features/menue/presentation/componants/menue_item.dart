@@ -3,6 +3,7 @@ import 'package:chef_app/core/utilis/app_colors.dart';
 import 'package:chef_app/core/utilis/app_textStyles.dart';
 import 'package:chef_app/core/widgets/custom_alertDialog.dart';
 import 'package:chef_app/core/widgets/custom_cached_networkImage.dart';
+import 'package:chef_app/core/widgets/custom_loading_indicator.dart';
 import 'package:chef_app/features/menue/data/models/meal_model.dart';
 import 'package:chef_app/features/menue/presentation/cubits/menu_cubit.dart';
 import 'package:chef_app/features/menue/presentation/cubits/menu_state.dart';
@@ -33,14 +34,21 @@ class MenuItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(mealModel.name),
-            Text(mealModel.description),
-            Text("${mealModel.price} LE"),
+            SizedBox(width:180.w,
+                child: Text(mealModel.description,overflow: TextOverflow.ellipsis,),),
+            Text("${mealModel.price.toString()} LE"),
           ],
         ),
         const Spacer(),
-        BlocBuilder<MenuCubit,MenuState>(
+        BlocConsumer<MenuCubit,MenuState>(
+         listener: (context, state){
+           if(state is DeleteMealSuccessState){
+             BlocProvider.of<MenuCubit>(context).getChefMeals();
+           }
+         },
           builder: (context, state) {
-            return IconButton(
+            return
+            IconButton(
                 onPressed: () {
                   showDialog(context: context, builder: (context) {
                     return CustomAlertDialog(
@@ -48,6 +56,7 @@ class MenuItem extends StatelessWidget {
                       actions: [
                         TextButton(onPressed: () {
                           BlocProvider.of<MenuCubit>(context).deleteMeal(mealModel.id);
+                          Navigator.pop(context);
                         },
                             child: Text("confirm".tr(context),
                               style: AppTextStyles.font18,)),

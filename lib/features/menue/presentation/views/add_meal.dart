@@ -7,6 +7,7 @@ import 'package:chef_app/core/utilis/commons.dart';
 import 'package:chef_app/core/widgets/back_leading_widget.dart';
 import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
+import 'package:chef_app/core/widgets/custom_image_file.dart';
 import 'package:chef_app/core/widgets/custom_loading_indicator.dart';
 import 'package:chef_app/core/widgets/custom_text_form_field.dart';
 import 'package:chef_app/features/menue/presentation/componants/cam_gallery_dialog.dart';
@@ -55,11 +56,7 @@ class AddMealScreen extends StatelessWidget {
                       //add photo of meal
                       Stack(
                         children: [
-                          CustomContainerImage(
-                            h: 110.h,
-                            w: 110.w,
-                            imagePathString: AppAssets.dish,
-                          ),
+                          CustomImageFile(image:menuCubit.image ,),
                           Positioned.directional(
                             textDirection: Directionality.of(context),
                             bottom: -10,
@@ -73,12 +70,12 @@ class AddMealScreen extends StatelessWidget {
                                           cameraOnTap: () {
                                             Navigator.pop(context);
                                             pickImage(ImageSource.camera)
-                                                .then((value) =>menuCubit.image=value);
+                                                .then((value) =>menuCubit.takeImage(value));
                                           },
                                           galleryOnTap: () {
                                             Navigator.pop(context);
                                             pickImage(ImageSource.gallery)
-                                                .then((value) =>menuCubit.image=value);
+                                                .then((value) =>menuCubit.takeImage(value));
                                           },
                                         );
                                       });
