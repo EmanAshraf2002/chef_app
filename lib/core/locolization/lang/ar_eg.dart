@@ -4,6 +4,7 @@ final Map<String, String> arEg =
  "pleaseChooseYourLanguage":"من فضلك اختر لغتك المفضلة",
  "Arabic":"العربية",
  "English":"الانجليزية",
+ "Welcome":"مرحبا بك",
  "WelcomeBack":"مرحبا بعودتك",
  "E-mail": "البريد الإلكتروني",
  "password": "كلمة المرور",
@@ -51,5 +52,14 @@ final Map<String, String> arEg =
  "category":"الصنف",
  "MealAddedSuccessfully":"تم إضافة الوجبة بنجاح",
  "NoMealsYet":"لا يوجد وجبات",
+ "EnterYourName":"ادخل اسمك",
+ "Name":"الاسم",
+ "PleaseEnterValidName":"من فضلك ادخل الاسم",
+ "SignUp":"التسجيل",
+ "AlreadyHaveAnAccount?":"لديك حساب بالفعل؟",
+ "Don'tHaveAnAccount?":"ليس لديك حساب؟",
+ "EnterYourPhone":"ادخل رقم هاتفك",
+ "Phone":"الهاتف",
+ "PleaseEnterValidPhone":"من فضلك ادخل رقم هاتف صحيح",
 
 };

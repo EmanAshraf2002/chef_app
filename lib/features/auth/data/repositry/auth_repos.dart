@@ -7,6 +7,7 @@ import 'package:dartz/dartz.dart';
 
 class AuthRepository{
 
+
   Future<Either<String,LoginModel>> login({
     required String email,required String password  }) async
   {

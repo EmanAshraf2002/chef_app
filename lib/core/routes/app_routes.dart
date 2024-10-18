@@ -3,6 +3,7 @@ class Routes{
  static const String splashScreen='/splashScreen' ;
  static const  String welcomeScreen='/welcomeScreen' ;
  static const  String loginScreen='/loginScreen' ;
+ static const  String signUpScreen='/signUpScreen' ;
  static const  String sendCodeScreen='/sendCodeScreen' ;
  static const  String resetPasswordScreen='/resetPasswordScreen' ;
  static const  String addMealScreen='/addMealScreen' ;

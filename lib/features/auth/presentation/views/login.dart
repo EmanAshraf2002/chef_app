@@ -2,6 +2,7 @@ import 'package:chef_app/core/locolization/app_localization.dart';
 import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:chef_app/core/utilis/app_assets.dart';
 import 'package:chef_app/core/utilis/app_colors.dart';
+import 'package:chef_app/core/utilis/app_textStyles.dart';
 import 'package:chef_app/core/utilis/commons.dart';
 import 'package:chef_app/core/widgets/custom_container_image.dart';
 import 'package:chef_app/core/widgets/custom_elevated_button.dart';
@@ -9,6 +10,7 @@ import 'package:chef_app/core/widgets/custom_loading_indicator.dart';
 import 'package:chef_app/core/widgets/custom_text_form_field.dart';
 import 'package:chef_app/features/auth/presentation/auth_cubits/login_cubit/login_cubit.dart';
 import 'package:chef_app/features/auth/presentation/auth_cubits/login_cubit/login_state.dart';
+import 'package:chef_app/features/auth/presentation/componants/custom_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,24 +26,9 @@ class LoginScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Stack(
-                alignment: AlignmentDirectional.center,
-                children: [
-                  CustomContainerImage(
-                      h: 230.h,
-                      w: double.infinity,
-                      imagePathString: AppAssets.loginBg),
-                  Center(
-                    child: Text("WelcomeBack".tr(context),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 26.sp,
-                        ).copyWith(fontWeight: FontWeight.bold)),
-                  ),
-                ],
-              ),
+              CustomStack(height:230.h, titleText: "WelcomeBack".tr(context),),
               SizedBox(
-                height: 100.h,
+                height: 90.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(24),
@@ -122,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 64.h,
+                            height: 60.h,
                           ),
                           state is LoginLoadingState?const CustomLoadingIndicator() :
                           CustomElevatedButton(
@@ -138,6 +125,25 @@ class LoginScreen extends StatelessWidget {
 
                             },
                           ),
+                          SizedBox(
+                            height: 16.h,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Don'tHaveAnAccount?".tr(context),
+                                style: AppTextStyles.font14.copyWith(color:AppColors.gray),),
+                              GestureDetector(
+                               onTap: (){
+                                 navigate(context: context, route:Routes.signUpScreen);
+                               },
+                                child: Text("SignUp".tr(context),
+                                    style: AppTextStyles.font14.copyWith(color:AppColors.primary,
+                                      decoration: TextDecoration.underline,),
+                                  ),
+                              ),
+
+                            ],
+                          ),
                         ],
                       ),
                     );
@@ -151,3 +157,5 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+

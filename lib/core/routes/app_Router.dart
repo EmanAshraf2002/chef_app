@@ -2,6 +2,7 @@ import 'package:chef_app/core/routes/app_routes.dart';
 import 'package:chef_app/features/auth/presentation/views/login.dart';
 import 'package:chef_app/features/auth/presentation/views/reset_pass.dart';
 import 'package:chef_app/features/auth/presentation/views/send_code.dart';
+import 'package:chef_app/features/auth/presentation/views/sign_up.dart';
 import 'package:chef_app/features/home/screens/home_screen.dart';
 import 'package:chef_app/features/menue/presentation/views/add_meal.dart';
 import 'package:chef_app/features/menue/presentation/views/menu_home.dart';
@@ -26,6 +27,9 @@ class AppRouter{
 
      case Routes.loginScreen :
        return MaterialPageRoute(builder: (context )=>const LoginScreen());
+
+     case Routes.signUpScreen :
+       return MaterialPageRoute(builder: (context )=>const SignUpScreen());
 
      case Routes.sendCodeScreen :
        return MaterialPageRoute(builder: (context )=>const SendCodeScreen());

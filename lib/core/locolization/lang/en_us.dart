@@ -4,6 +4,7 @@ final Map<String, String> enUs =
   "pleaseChooseYourLanguage":"please choose your language",
   "Arabic":"Arabic",
   "English":"English",
+  "Welcome":"Welcome",
   "WelcomeBack":"Welcome Back",
   "E-mail":"E-mail",
   "EnterYourEmail":"Enter Your Email",
@@ -51,5 +52,14 @@ final Map<String, String> enUs =
   "category":"Category",
   "MealAddedSuccessfully":"Meal added Successfully",
   "NoMealsYet":"No Meals Yet",
+  "EnterYourName":"Enter your Name",
+  "Name":"Name",
+  "PleaseEnterValidName":"Please Enter Valid Name",
+  "SignUp":"SignUp",
+  "AlreadyHaveAnAccount?":"Already have an account?",
+  "Don'tHaveAnAccount?":"Don't have an account?",
+  "EnterYourPhone":"Enter Your Phone",
+  "Phone":"Phone",
+  "PleaseEnterValidPhone":"Please Enter Valid Phone",
 
 };
